@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:xus_demo/ui/LoginPage.dart';
 
 class IndexPage extends StatelessWidget {
   @override
@@ -74,20 +75,29 @@ class IndexPage extends StatelessWidget {
                       padding: EdgeInsets.all(20),
                       color: Color.fromARGB(255, 255, 255, 255),
                       child: Center(
-                          child: Column(
-                        children: <Widget>[
-                          Image.asset(
-                            "images/ic_order.png",
-                            width: 60,
-                            height: 60,
-                          ),
-                          Text(
-                            "待发货订单",
-                            style: new TextStyle(
-                                fontSize: 13,
-                                color: Color.fromARGB(255, 67, 67, 67)),
-                          ),
-                        ],
+                          child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                          );
+                        },
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              "images/ic_order.png",
+                              width: 60,
+                              height: 60,
+                            ),
+                            Text(
+                              "待发货订单",
+                              style: new TextStyle(
+                                  fontSize: 13,
+                                  color: Color.fromARGB(255, 67, 67, 67)),
+                            ),
+                          ],
+                        ),
                       )),
                     ),
                   ),

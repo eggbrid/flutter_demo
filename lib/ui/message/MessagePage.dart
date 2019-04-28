@@ -18,18 +18,19 @@ class _TabBarWidgetState extends State<_TabBarWidget> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new Scaffold(
-        appBar: new TabBar(
-            tabs: models.map((TabModel tab) {
-              return new Tab(text: tab.title);
-            }).toList(),
-            labelColor: Color.fromARGB(255, 255, 127, 0),
-            indicatorColor: Color.fromARGB(255, 255, 127, 0)),
-        body: new TabBarView(
-          children: models.map((TabModel tab) {
-            return new Center(child: new Text(tab.content));
-          }).toList(),
-        ));
+    return new SafeArea(
+        child: new Scaffold(
+            appBar: new TabBar(
+                tabs: models.map((TabModel tab) {
+                  return new Tab(text: tab.title);
+                }).toList(),
+                labelColor: Color.fromARGB(255, 255, 127, 0),
+                indicatorColor: Color.fromARGB(255, 255, 127, 0)),
+            body: new TabBarView(
+              children: models.map((TabModel tab) {
+                return new Center(child: new Text(tab.content));
+              }).toList(),
+            )));
   }
 }
 
